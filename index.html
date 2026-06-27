@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GripTok — Télécharger des vidéos TikTok sans filigrane gratuitement</title>
+
+  <!-- SEO de base -->
+  <meta name="description" content="Télécharge gratuitement des vidéos TikTok sans filigrane en HD. Rapide, gratuit, sans inscription. Colle le lien et télécharge en un clic." />
+  <meta name="keywords" content="télécharger tiktok, download tiktok, tiktok sans filigrane, tiktok downloader gratuit, télécharger vidéo tiktok, tiktok hd" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://griptok.netlify.app/" />
+
+  <!-- Open Graph (partage WhatsApp, Facebook, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GripTok — Télécharge tes vidéos TikTok sans filigrane" />
+  <meta property="og:description" content="Télécharge des vidéos TikTok sans filigrane, gratuitement et sans inscription. Rapide et simple." />
+  <meta property="og:url" content="https://griptok.netlify.app/" />
+  <meta property="og:image" content="https://griptok.netlify.app/images/preview.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="https://griptok.netlify.app/images/preview.png" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GripTok — Télécharge tes vidéos TikTok sans filigrane" />
+  <meta name="twitter:description" content="Télécharge des vidéos TikTok sans filigrane, gratuitement et sans inscription." />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GripTok",
+    "url": "https://griptok.netlify.app/",
+    "description": "Téléchargeur de vidéos TikTok sans filigrane, gratuit et sans inscription.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema (apparaît dans les résultats Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment télécharger une vidéo TikTok sans filigrane ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Copie le lien de la vidéo TikTok, colle-le dans le champ sur GripTok, clique sur Analyser, puis télécharge la vidéo sans filigrane en un clic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GripTok est-il gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, GripTok est totalement gratuit et sans inscription. Aucune limite de téléchargement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les vidéos téléchargées sont-elles en HD ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, GripTok télécharge les vidéos en haute définition quand elles sont disponibles en HD sur TikTok."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Préconnexion Google Fonts pour accélérer le chargement -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0D0D0D;
+      --card: #141420;
+      --card2: #1C1C2E;
+      --red: #FF2D55;
+      --cyan: #00F2EA;
+      --white: #FFFFFF;
+      --muted: #888;
+      --border: rgba(255,255,255,0.08);
+      --radius: 16px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.4rem;
+      letter-spacing: -0.5px;
+    }
+    .logo span:first-child { color: var(--red); }
+    .logo span:last-child  { color: var(--cyan); }
+
+    .badge {
+      animation: badgeColorCycle 3s ease-in-out infinite;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(255,45,85,0.15);
+      color: var(--red);
+      border: 1px solid rgba(255,45,85,0.3);
+      padding: 4px 12px;
+      border-radius: 99px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      max-width: 700px;
+      margin-bottom: 16px;
+    }
+
+    h1 .accent-red  { color: var(--red); }
+    h1 .accent-cyan { color: var(--cyan); }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--white);
+      text-align: center;
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 48px;
+    }
+
+    /* ── INPUT CARD ── */
+    .input-card {
+      width: 100%;
+      max-width: 640px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin-bottom: 32px;
+    }
+
+    .input-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .url-input {
+      flex: 1;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    /* Hover input — couleur aléatoire via transition */
+.url-input:hover {
+  border-color: var(--hover-border, var(--red));
+}
+
+.url-input:focus {
+  border-color: var(--hover-border, var(--red));
+}
+
+/* Badge "Sans watermark" — alternance rouge/cyan */
+@keyframes badgeColorCycle {
+  0%, 49%  {
+    color: var(--red);
+    border-color: rgba(255, 45, 85, 0.3);
+    background: rgba(255, 45, 85, 0.15);
+  }
+  50%, 100% {
+    color: var(--cyan);
+    border-color: rgba(0, 242, 234, 0.3);
+    background: rgba(0, 242, 234, 0.15);
+  }
+}
+
+
+    }
+    .url-input::placeholder { color: #444; }
+    .input-wrap {
+      flex: 1;
+      position: relative;
+      display: flex;
+    }
+
+    .input-wrap .url-input {
+      padding-right: 46px;
+    }
+
+    .btn-paste {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: none;
+      background: var(--card2);
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+    }
+    .btn-paste:hover {
+      color: var(--cyan);
+      background: rgba(0,242,234,0.12);
+    }
+    .btn-paste:active { transform: translateY(-50%) scale(0.92); }
+
+    .btn-fetch {
+      background: linear-gradient(135deg, var(--red), #c0005c);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s, transform 0.1s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-fetch:hover  { opacity: 0.88; }
+    .btn-fetch:active { transform: scale(0.97); }
+    .btn-fetch:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn-fetch svg { width: 18px; height: 18px; }
+
+    /* ── LOADER ── */
+    #loader {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .spinner {
+      width: 36px; height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--red);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #loader p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── ERROR ── */
+    #error-box {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: rgba(255,45,85,0.1);
+      border: 1px solid rgba(255,45,85,0.3);
+      border-radius: 10px;
+      color: var(--red);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* ── RESULT CARD ── */
+    #result {
+      display: none;
+      width: 100%;
+      max-width: 640px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      animation: fadeUp 0.35s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* scan line effect on video wrapper */
+    .video-wrap {
+      position: relative;
+      background: #000;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .video-wrap::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to bottom,
+        transparent,
+        rgba(0,242,234,0.06),
+        transparent);
+      animation: scan 2.4s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes scan {
+      from { top: -40%; }
+      to   { top: 110%; }
+    }
+
+    #video-player {
+      width: 100%;
+      max-height: 500px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .result-info {
+      padding: 20px 24px;
+    }
+
+    .result-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .tiktok-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--red), var(--cyan));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+
+    .result-title {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .result-author {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-dl {
+      flex: 1;
+      min-width: 160px;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btn-dl:active { transform: scale(0.97); }
+
+    .btn-dl-main {
+      background: linear-gradient(135deg, var(--cyan), #00b8b3);
+      color: #000;
+      border: none;
+    }
+    .btn-dl-wm {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--border);
+    }
+    .btn-dl:hover { opacity: 0.85; }
+    .btn-dl-mp3 {
+      background: transparent;
+      color: var(--cyan);
+      border: 1.5px solid rgba(0,242,234,0.4);
+    }
+
+    .dl-tip {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--white);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .dl-tip strong { color: var(--white); }
+
+    /* ── SHARE SECTION ── */
+    .share-section {
+      width: 100%;
+      max-width: 640px;
+      margin-top: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .share-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .share-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      background: var(--card2);
+      color: var(--white);
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.2s;
+      text-decoration: none;
+    }
+    .share-btn:hover { opacity: 0.8; transform: translateY(-2px); }
+    .share-btn:active { transform: scale(0.95); }
+
+    .share-whatsapp:hover { color: #25D366; border-color: #25D366; }
+    .share-twitter:hover  { color: #fff; border-color: #fff; }
+    .share-telegram:hover { color: #29A9EA; border-color: #29A9EA; }
+    .share-facebook:hover { color: #1877F2; border-color: #1877F2; }
+    .share-copy:hover     { color: var(--cyan); border-color: var(--cyan); }
+
+    .share-copy-feedback {
+      display: none;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      width: 100%;
+      max-width: 640px;
+      margin-top: 60px;
+    }
+
+    .how-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+.steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+ .ellipsis-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      vertical-align: middle;
+      color: var(--white);
+      display: inline-block;
+    }
+
+    @media (max-width: 500px) {
+      .steps { grid-template-columns: 1fr; }
+      .input-row { flex-direction: column; }
+      .btn-fetch { width: 100%; justify-content: center; }
+    }
+/* -----STEPS------*/
+  .step {
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 16px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-img-wrap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 10px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.step-img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+.step a {
+  color : var(--cyan);
+}
+
+    .step-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .step-icon { font-size: 1.8rem; margin-bottom: 8px; }
+
+    .step-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 0.75rem;
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      width: 100%;
+      max-width: 640px;
+      margin-top: 8px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      gap: 12px;
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--cyan);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] .faq-q::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      padding: 0 20px 16px;
+      font-size: 0.85rem;
+      color: var(--white);
+      line-height: 1.65;
+    }
+    .faq-a strong { color: var(--white); text-decoration: underline;}
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.75rem;
+      color: white;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+
+    /* ── CONSENT NOTICE ── */
+    .consent-notice {
+      width: 100%;
+      max-width: 640px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: -16px;
+      margin-bottom: 8px;
+    }
+    .consent-notice a {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover {
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span>Grip</span><span>Tok</span>
+  </div>
+  <div class="badge">Sans filigrane</div>
+</header>
+
+<main>
+  <p class="hero-eyebrow">Téléchargeur TikTok gratuit</p>
+  <h1>
+    Colle le lien,<br>
+    <span class="accent-red">récupère</span> ta <span class="accent-cyan">vidéo</span>
+  </h1>
+  <p class="hero-sub">
+    Télécharge n'importe quelle vidéo TikTok en quelques secondes, sans filigrane, sans inscription.
+  </p>
+
+  <!-- Input -->
+  <div class="input-card">
+    <p class="input-label">Lien TikTok</p>
+    <div class="input-row">
+      <div class="input-wrap">
+        <input
+          type="url"
+          id="url-input"
+          class="url-input"
+          placeholder="Colle le lien de ta vidéo ici"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+        />
+        <button class="btn-paste" id="paste-btn" type="button" title="Coller le lien" aria-label="Coller le lien">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+          </svg>
+        </button>
+      </div>
+      <button class="btn-fetch" id="fetch-btn" onclick="fetchVideo()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        Analyser
+      </button>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+      <div class="spinner"></div>
+      <p>Récupération de la vidéo…</p>
+    </div>
+
+    <!-- Error -->
+    <div id="error-box"></div>
+  </div>
+
+  <!-- Consent notice -->
+  <p class="consent-notice">
+    En utilisant GripTok, vous reconnaissez avoir pris connaissance de notre
+    <a href="confidentialite.html">politique de confidentialité</a>
+    et de nos <a href="legal.html">mentions légales</a>.
+  </p>
+
+  <!-- Result -->
+  <div id="result">
+    <div class="video-wrap">
+      <video id="video-player" controls playsinline></video>
+    </div>
+    <div class="result-info">
+      <div class="result-meta">
+        <div class="tiktok-icon">🎵</div>
+        <div>
+          <div class="result-title" id="result-title">Vidéo TikTok</div>
+          <div class="result-author" id="result-author"></div>
+        </div>
+      </div>
+     <div class="btn-row">
+        <a id="dl-btn" class="btn-dl btn-dl-main" download="tiktok.mp4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Télécharger (sans filigrane)
+        </a>
+        <a id="dl-wm-btn" class="btn-dl btn-dl-wm" download="tiktok_wm.mp4">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Télécharger Avec filigrane
+        </a>
+        <a id="dl-mp3-btn" class="btn-dl btn-dl-mp3" download="tiktok.mp3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18V5l12-2v13"/>
+            <circle cx="6" cy="18" r="3"/>
+            <circle cx="18" cy="16" r="3"/>
+          </svg>
+          Télécharger en MP3
+        </a>
+      </div>
+
+      <p class="dl-tip">
+        ⓘ Si le premier bouton ne fonctionne pas, essaie l'option "<strong style="text-decoration: underline;">Avec filigrane</strong>" à la place.
+      </p>
+    </div>
+  </div>
+
+  <!-- Partage -->
+  <div class="share-section">
+    <p class="share-title">Partage GripTok avec tes amis</p>
+    <div class="share-row">
+      <a id="share-whatsapp" class="share-btn share-whatsapp" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-1.747-.85-2.886-1.514-4.07-3.434-.307-.527.307-.49.878-1.638.097-.196.05-.366-.05-.516-.1-.15-.673-1.62-.92-2.222-.246-.6-.5-.52-.673-.53-.174-.01-.374-.01-.573-.01-.2 0-.523.075-.798.375-.273.3-1.045 1.02-1.045 2.475 0 1.455 1.07 2.865 1.22 3.06.149.195 2.025 3.1 4.92 4.226 2.895 1.124 2.895.75 3.42.7.523-.046 1.696-.69 1.94-1.358.24-.667.24-1.234.166-1.358-.072-.124-.273-.198-.572-.346zM12.05 21.785h-.005c-1.766 0-3.5-.475-5.013-1.378l-.36-.214-3.73.978.997-3.638-.235-.374a9.86 9.86 0 0 1-1.51-5.25c.002-5.45 4.435-9.886 9.86-9.886a9.83 9.83 0 0 1 6.98 2.886 9.82 9.82 0 0 1 2.89 6.99c-.003 5.452-4.437 9.886-9.874 9.886zm8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .163 5.335.16 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.652a11.86 11.86 0 0 0 5.71 1.453h.005c6.554 0 11.886-5.336 11.89-11.893a11.84 11.84 0 0 0-3.476-8.42z"/></svg>
+      </a>
+      <a id="share-twitter" class="share-btn share-twitter" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a id="share-telegram" class="share-btn share-telegram" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14.122.098.155.23.171.327.016.094.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212-.07-.062-.174-.041-.249-.024-.106.024-1.793 1.14-5.061 3.345-.479.328-.913.488-1.302.48-.428-.01-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.327-.437.898-.663 3.522-1.532 5.87-2.541 7.043-3.026 3.354-1.374 4.049-1.612 4.499-1.62z"/></svg>
+      </a>
+      <a id="share-facebook" class="share-btn share-facebook" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.733 0-1.325.592-1.325 1.325v21.351c0 .731.592 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.733-.592-1.325-1.325-1.325z"/></svg>
+      </a>
+      <button id="share-copy" class="share-btn share-copy" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+      </button>
+    </div>
+    <p class="share-copy-feedback" id="share-copy-feedback">Lien copié ✅</p>
+  </div>
+
+  <!-- How it works -->
+  <div class="how-section" id="how-section">
+    <p class="how-title">Comment ça marche</p>
+  
+  <div class="steps">
+  <div class="step">
+    <div class="step-num">ÉTAPE 1</div>
+    <div class="step-img-wrap">
+      <img src="images/etape1.png" alt="Appuyer sur partager dans TikTok" class="step-img" />
+    </div>
+    <div class="step-label">Ouvre Tiktok</div>
+    <div class="step-desc">Ouvre TikTok, clique sur "Partager"</div>
+  </div>
+  <div class="step">
+    <div class="step-num">ÉTAPE 2</div>
+    <div class="step-img-wrap">
+      <img src="images/etape2.png" alt="Coller le lien et analyser" class="step-img" />
+    </div>
+    <div class="step-label">Copie le lien</div>
+    <div class="step-desc">Copie le lien puis ouvre <a href="https://griptok.netlify.app/">l'application GripTok</a></div>
+  </div>
+  <div class="step">
+    <div class="step-num">ÉTAPE 3</div>
+    <div class="step-img-wrap">
+      <img src="images/etape3.png" alt="Télécharger la vidéo TikTok" class="step-img" />
+    </div>
+    <div class="step-label">Colle et Analyse</div>
+    <div class="step-desc">Colle le lien dans le champ et clique sur Analyser pour apprêter ta vidéo.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">ÉTAPE 4</div>
+    <div class="step-img-wrap step-img-wrap-tall">
+      <img src="images/etape4.png" alt="Récupérer ta vidéo téléchargée" class="step-img" />
+    </div>
+    <div class="step-label">Télécharge ta vidéo</div>
+    <div class="step-desc">Ta vidéo est prête, télécharge-la directement en appuyant sur <strong class="ellipsis-icon">&#8942;</strong> ou en choisissant parmi les autres options qui sont en bas.</div>
+  </div>
+</div>
+  </div>
+
+  <!-- FAQ visible -->
+  <div class="faq-section">
+    <p class="how-title" style="margin-top:60px;">Questions fréquentes</p>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Comment télécharger une vidéo TikTok sans filigrane ?</summary>
+        <p class="faq-a">Ouvre TikTok, appuie sur <strong>Partager</strong> puis <strong>Copier le lien</strong>. Colle ce lien dans le champ en haut de cette page, clique sur <strong>Analyser</strong>, puis sur le bouton <strong>Télécharger (sans WM)</strong>.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">GripTok est-il totalement gratuit ?</summary>
+        <p class="faq-a">Oui, GripTok est 100% gratuit, sans inscription, sans limite de téléchargement. Tout cela est rendu possible grâce aux publicités du site.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Les vidéos sont-elles téléchargées en HD ?</summary>
+        <p class="faq-a">Oui, GripTok récupère la meilleure qualité disponible. Quand la vidéo originale est en HD, tu la reçois en HD.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Pourquoi le bouton télécharger ouvre la vidéo dans un onglet ?</summary>
+        <p class="faq-a">C'est une restriction du navigateur. Dans ce cas, fais un <strong>clic droit</strong> sur la vidéo puis appuyez sur <strong>Enregistrer la vidéo sous…</strong> pour la sauvegarder sur ton appareil.</p>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer>
+  GripTok n'est pas affilié à TikTok. Veuillez Respecter les
+  <a href="https://www.tiktok.com/legal/page/row/terms-of-service/fr" target="_blank">CGU de TikTok</a>.
+  Usage personnel uniquement.
+  —
+  <a href="confidentialite.html">Confidentialité</a> ·
+  <a href="legal.html">Mentions légales</a>
+</footer>
+
+<script>
+// Bordure aléatoire rouge ou cyan au hover de l'input
+const urlInput = document.getElementById('url-input');
+
+urlInput.addEventListener('mouseenter', () => {
+  const colors = ['#FF2D55', '#00F2EA'];
+  const pick = colors[Math.floor(Math.random() * colors.length)];
+  urlInput.style.setProperty('--hover-border', pick);
+});
+
+urlInput.addEventListener('mouseleave', () => {
+  // Remet la bordure neutre quand la souris part
+  urlInput.style.removeProperty('--hover-border');
+});
+// Auto-scroll vers "Comment ça marche" après 2,5s si pas encore scrollé
+let userScrolled = false;
+
+window.addEventListener('scroll', () => {
+  userScrolled = true;
+}, { once: true });
+
+setTimeout(() => {
+  if (!userScrolled) {
+    document.getElementById('how-section').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}, 800);
+  const API = "https://www.tikwm.com/api/";
+
+  async function fetchVideo() {
+    const input = document.getElementById("url-input");
+    const url = input.value.trim();
+
+    // Reset
+    showError("");
+    showResult(false);
+
+    // Validation basique
+    if (!url) {
+      showError("Colle un lien TikTok pour commencer.");
+      return;
+    }
+    if (!url.includes("tiktok.com")) {
+      showError("Ce lien ne ressemble pas à un lien TikTok. Vérifie et réessaie.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(`${API}?url=${encodeURIComponent(url)}&hd=1`);
+      if (!res.ok) throw new Error("Erreur réseau");
+
+      const json = await res.json();
+
+      if (json.code !== 0 || !json.data) {
+        throw new Error(json.msg || "Impossible de récupérer la vidéo.");
+      }
+
+      const d = json.data;
+
+      // Vidéo
+      const videoUrl = d.hdplay || d.play || "";
+      const videoWmUrl = d.wmplay || d.play || "";
+
+      if (!videoUrl) throw new Error("Aucun lien vidéo trouvé.");
+
+      // Rempli le lecteur
+      const player = document.getElementById("video-player");
+      player.src = videoUrl;
+
+      // Boutons téléchargement
+      document.getElementById("dl-btn").href = videoUrl;
+      document.getElementById("dl-wm-btn").href = videoWmUrl;
+      // MP3
+      const mp3Url = d.music || d.music_info?.play || videoUrl;
+const mp3Btn = document.getElementById("dl-mp3-btn");
+mp3Btn.href = mp3Url;
+mp3Btn.download = mp3Url === videoUrl ? "tiktok.mp4" : "tiktok.mp3";
+mp3Btn.style.display = "flex";
+
+      // Infos
+      const title = d.title || "Vidéo TikTok";
+      const author = d.author?.nickname ? "@" + d.author.nickname : "";
+      document.getElementById("result-title").textContent =
+        title.length > 60 ? title.slice(0, 60) + "…" : title;
+      document.getElementById("result-author").textContent = author;
+
+      showResult(true);
+      document.getElementById("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    } catch (err) {
+      showError(
+        err.message.includes("Failed to fetch")
+          ? "Connexion impossible à l'API. Vérifie ta connexion internet ou réessaie."
+          : err.message
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function setLoading(on) {
+    document.getElementById("loader").style.display = on ? "flex" : "none";
+    document.getElementById("fetch-btn").disabled = on;
+  }
+
+  function showError(msg) {
+    const box = document.getElementById("error-box");
+    if (msg) {
+      box.textContent = "⚠️ " + msg;
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  }
+
+  function showResult(on) {
+    document.getElementById("result").style.display = on ? "block" : "none";
+  }
+
+  // Permet de lancer avec Entrée
+  document.getElementById("url-input").addEventListener("keydown", e => {
+    if (e.key === "Enter") fetchVideo();
+  });
+  // ── Partage de l'outil ──
+  const shareUrl = "https://griptok.netlify.app/";
+  const shareText = "Télécharge tes vidéos TikTok sans filigrane gratuitement avec GripTok 🎬";
+
+  document.getElementById("share-whatsapp").href =
+    `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+
+  document.getElementById("share-twitter").href =
+    `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+
+  document.getElementById("share-telegram").href =
+    `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+
+  document.getElementById("share-facebook").href =
+    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+
+  document.getElementById("share-copy").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      const feedback = document.getElementById("share-copy-feedback");
+      feedback.style.display = "block";
+      setTimeout(() => { feedback.style.display = "none"; }, 2000);
+    } catch (err) {
+      console.error("Impossible de copier le lien", err);
+    }
+  });
+  // ── Bouton coller automatique ──
+  document.getElementById("paste-btn").addEventListener("click", async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      document.getElementById("url-input").value = text;
+    } catch (err) {
+      showError("Impossible d'accéder au presse-papier. Colle le lien manuellement.");
+    }
+  });
+</script>
+
+</body>
+</html>
